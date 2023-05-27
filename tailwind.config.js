@@ -14,6 +14,7 @@ module.exports = {
         cardNumberColor: '#B7BDCC',
         lightestBlue: '#535766',
         lightBlue: '#ECF3FE',
+        blueAsh: '#FCFBFE'
       },
     },},
   variants: {},
