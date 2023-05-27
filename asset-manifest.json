@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/designtest/static/css/main.611ad917.css",
+    "main.js": "/designtest/static/js/main.04b7b531.js",
+    "static/js/787.266d2bac.chunk.js": "/designtest/static/js/787.266d2bac.chunk.js",
+    "static/media/chip.png": "/designtest/static/media/chip.b3d50c0dc1ddd67a8589.png",
+    "static/media/radal-stroke.png": "/designtest/static/media/radal-stroke.0c4a550b5b845c9d93b6.png",
+    "index.html": "/designtest/index.html",
+    "main.611ad917.css.map": "/designtest/static/css/main.611ad917.css.map",
+    "main.04b7b531.js.map": "/designtest/static/js/main.04b7b531.js.map",
+    "787.266d2bac.chunk.js.map": "/designtest/static/js/787.266d2bac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.611ad917.css",
+    "static/js/main.04b7b531.js"
+  ]
+}
