@@ -9,6 +9,9 @@ import menuGrid from './assets/menu-grid.png'
 import Tick from './assets/tick.png'
 import chip from './assets/chip.png'
 import wifi from './assets/wifi.png'
+import appleIcon from './assets/apple.png'
+import receipt from './assets/receipt.png'
+
 
 
 
@@ -249,47 +252,54 @@ useEffect(()=>{
 
 <div className="bottomLayer relative h-[84%] w-full bg-ash rounded-[0.6vw] flex flex-col justify-between items-center">
 
-<div  className="cardSection bg-cover bg-center h-[61%] w-[67%] bg-white bg-opacity-80 rounded-[0.6vw]-lg flex flex-col justify-between items-center  backdrop-blur-lg absolute top-[-18%]">
+<div  className="cardSection bg-cover bg-center pb-3 h-[63%] w-[67%] bg-white bg-opacity-80 rounded-[0.9vw] flex flex-col justify-between items-center  backdrop-blur-lg absolute top-[-18%]">
  <div className="backgroundDiv relative w-[87%] h-full overflow-hidden flex flex-col justify-between items-center"><img src={radalBG} alt=""  className='max-w-[200%] mt-[25%] absolute '/>
- <div className="chipAndWifiDiv  h-[22%] w-full flex justify-between items-center mt-[2vw]"> <div className="chip"><img src={chip} alt="" className='w-[4vw] object-contain  aspect-[4/3]'/></div> <div className="wifi"><img src={wifi} alt="" className='w-[2.5vw] object-contain  aspect-[4/3]'/></div> </div>
 
-<div className="cardDetailsDiv flex flex-col justify-between h-[40%] w-full">
+<div className="contentDiv h-full w-full flex flex-col justify-between absolute">
+<div className="chipAndWifiDiv  h-[22%] w-full flex justify-between items-center mt-[2vw]"> <div className="chip"><img src={chip} alt="" className='w-[4vw] object-contain  aspect-[4/3]'/></div> <div className="wifi"><img src={wifi} alt="" className='w-[2.5vw] object-contain  aspect-[4/3]'/></div> </div>
 
-<div className='cardNameAndNumberSection flex flex-col justify-between h-[45%] w-full'>
+<div className="cardDetailsDiv flex flex-col justify-between h-[45%] w-full">
+
+<div className='cardNameAndNumberSection flex flex-col justify-between h-[30%] w-full'>
   <div className='nameDiv text-navyBlue text-[1.2vw] '>Jonathan Michael</div>
-<div className='cardNumberDiv text-navyBlue text-[1.3vw] font-semibold flex items-center h-[50%]'><span className='mr-[0.4vw] text-[2vw]'>.</span><span className='mr-[0.4vw]  text-[2vw]'>.</span><span className='mr-[0.4vw]  text-[2vw]'>.</span><span className='mr-[1.2vw]  text-[2vw]'>.</span>2490</div>
+<div className='cardNumberDiv text-navyBlue text-[1.3vw] font-semibold flex items-center '> <div className="dotDiv flex items-start mb-[1.2vw]"><span className='mr-[0.4vw] text-[2vw] '>.</span><span className='mr-[0.4vw]  text-[2vw]'>.</span><span className='mr-[0.4vw]  text-[2vw]'>.</span><span className='mr-[1.2vw]  text-[2vw]'>.</span> </div> <span>2490</span></div>
 </div>
 
 <div className="expiryDateAndLogoSection flex justify-between h-[33%]">
-<div className="expiryDateDiv">09/22</div>  <div className="masterCardLogoDiv">logo</div>
+<div className="expiryDateDiv  text-navyBlue text-[1.1vw] font-[450]">09/22</div>  <div className="masterCardLogoDiv"><img src={masterCardLogo} alt="" className='w-[3vw] object-contain  aspect-[4/3]'/></div>
 
 
 </div>
 
 
 </div>
+
+</div>
+
+ 
+
  
  </div> 
  
  </div>
 
 
-<div className="productDetailsDiv absolute w-[70%] h-[27%] top-[47%] flex flex-col justify-between ">
-<div className='company w-full flex justify-between '> <div className="title">Company</div>  <div className="attachment">hjhj</div> </div>
-<div className='orderNumber  flex justify-between'><div className="title">Order Number</div>  <div className="attachment">3467322</div> </div>
-<div className='product  flex justify-between'><div className="title">Product</div>  <div className="attachment">Macbook Air</div> </div>
-<div className='vat  flex justify-between'><div className="title">VAT(20%)</div>  <div className="attachment">$100.00</div> </div>
+<div className="productDetailsDiv absolute w-[70%] h-[27%] top-[50%] flex flex-col justify-between ">
+<div className='company w-full flex justify-between '> <div className="title text-lightestBlue text-[1.1vw]">Company</div>  <div className="attachment flex text-navyBlue text-[1.1vw] font-semibold"><img src={appleIcon} alt=""  className='mr-[0.4vw] w-[1.5vw] object-contain  aspect-[4/3]'/><span>Apple</span></div> </div>
+<div className='orderNumber  flex justify-between'><div className="title text-lightestBlue text-[1.1vw]">Order Number</div>  <div className="attachment text-navyBlue text-[1.1vw]  font-semibold">3467322</div> </div>
+<div className='product  flex justify-between'><div className="title text-lightestBlue text-[1.1vw]">Product</div>  <div className="attachment text-navyBlue text-[1.1vw] font-semibold ">Macbook Air</div> </div>
+<div className='vat  flex justify-between'><div className="title text-lightestBlue text-[1.1vw]">VAT(20%)</div>  <div className="attachment text-navyBlue text-[1.1vw] font-semibold ">$100.00</div> </div>
 
 </div>
 
-<div className="dottedSection absolute top-[77%] w-full  flex justify-between items-center"><div className="circle rounded-[0.6vw]-full bg-backgroundColor w-[30px] h-[25px] ml-[-5%]"></div><div className="dash w-full border  border-black  border-dashed"></div><div className="circle mr-[-5%] rounded-[0.6vw]-full bg-backgroundColor w-[30px] h-[25px]"></div></div>
+<div className="dottedSection absolute top-[77%] w-full  flex justify-between items-center"><div className="circle rounded-[0.6vw]-full bg-backgroundColor w-[30px] h-[25px] ml-[-5%]"></div><div className="dash w-full border  border-navyBlue  border-dashed"></div><div className="circle mr-[-5%] rounded-[0.6vw]-full bg-backgroundColor w-[30px] h-[25px]"></div></div>
 
-<div className="extraPaymentDiv absolute flex justify-between items-center h-[12%] w-[70%] top-[85%] bg-slate-500">   
+<div className="extraPaymentDiv absolute flex justify-between items-center h-[12%] w-[70%] top-[85%]">   
 <div className="writeUpAndNumberSection flex flex-col justify-between">   
-<div className="writeUp">You have to pay</div>
-<div className="number">$549.99</div>
+<div className="writeUp text-lightestBlue text-[1.1vw]">You have to pay</div>
+<div className="number"><span className='text-navyBlue text-[1.8vw] font-semibold'>$599</span><span className='text-navyBlue text-[1.1vw] font-[400]'>.</span><span className='text-navyBlue text-[1.1vw] font-[400]'>99</span></div>
 </div> 
- <div className="icon">paper</div>
+ <div className="icon"><img src={receipt} alt=""  className='mr-[0.4vw] w-[3vw] object-contain  aspect-[4/3]'/></div>
 
 </div>
 
