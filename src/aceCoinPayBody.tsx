@@ -33,7 +33,7 @@ const check = useRef<HTMLImageElement>(null)
 const cvvMenu = useRef<HTMLImageElement>(null)
 const passwordMenu = useRef<HTMLImageElement>(null)
 const paymentButtonRef = useRef<HTMLButtonElement>(null)
-const [passwordValue, setPasswordValue] = useState('');
+
 
 
 function setCardNumberInputToOnlyAcceptNumber(ref: React.RefObject<HTMLInputElement>) {
@@ -292,7 +292,7 @@ useEffect(()=>{
 
 </div>
 
-<div className="dottedSection absolute top-[77%] w-full  flex justify-between items-center"><div className="circle rounded-[0.6vw]-full bg-backgroundColor w-[30px] h-[25px] ml-[-5%]"></div><div className="dash w-full border  border-navyBlue  border-dashed"></div><div className="circle mr-[-5%] rounded-[0.6vw]-full bg-backgroundColor w-[30px] h-[25px]"></div></div>
+<div className="dottedSection absolute top-[77%] w-full  flex justify-between items-center "><div className="circle rounded-full bg-backgroundColor w-[30px] h-[25px] ml-[-5%]"></div><div className="dash w-full border-[0.1vw]  border-navyBlue  border-dashed"></div><div className="circle mr-[-5%] rounded-full bg-backgroundColor w-[30px] h-[25px]"></div></div>
 
 <div className="extraPaymentDiv absolute flex justify-between items-center h-[12%] w-[70%] top-[85%]">   
 <div className="writeUpAndNumberSection flex flex-col justify-between">   
