@@ -256,7 +256,7 @@ useEffect(()=>{
  <div className="backgroundDiv relative w-[87%] h-full overflow-hidden flex flex-col justify-between items-center"><img src={radalBG} alt=""  className='max-w-[200%] mt-[25%] absolute '/>
 
 <div className="contentDiv h-full w-full flex flex-col justify-between absolute">
-<div className="chipAndWifiDiv  h-[22%] w-full flex justify-between items-center mt-[2vw]"> <div className="chip"><img src={chip} alt="" className='w-[4vw] object-contain  aspect-[4/3]'/></div> <div className="wifi"><img src={wifi} alt="" className='w-[2.5vw] object-contain  aspect-[4/3]'/></div> </div>
+<div className="chipAndWifiDiv  h-[22%] w-full flex justify-between items-center mt-[2vw]"> <img src={chip} alt="" className='w-[2.4vw] object-contain  aspect-[1/3]'/> <div className="wifi"><img src={wifi} alt="" className='w-[2.5vw] object-contain  aspect-[4/3]'/></div> </div>
 
 <div className="cardDetailsDiv flex flex-col justify-between h-[45%] w-full">
 
