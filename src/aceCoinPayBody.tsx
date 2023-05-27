@@ -7,6 +7,9 @@ import masterCardIcon from './assets/mastercard.png'
 import masterCardLogo from './assets/mastercardlogo.png'
 import menuGrid from './assets/menu-grid.png'
 import Tick from './assets/tick.png'
+import chip from './assets/chip.png'
+import wifi from './assets/wifi.png'
+
 
 
 export default function AceCoinPay() {
@@ -26,6 +29,7 @@ const editText = useRef<HTMLSpanElement>(null)
 const check = useRef<HTMLImageElement>(null)
 const cvvMenu = useRef<HTMLImageElement>(null)
 const passwordMenu = useRef<HTMLImageElement>(null)
+const paymentButtonRef = useRef<HTMLButtonElement>(null)
 const [passwordValue, setPasswordValue] = useState('');
 
 
@@ -118,21 +122,6 @@ function setPasswordNumberInputToOnlyAcceptNumbers(ref: React.RefObject<HTMLInpu
 
 
 
-const hideNumbersAndDisplayDot = (ref: React.RefObject<HTMLInputElement>) => {
-  const inputElement = ref.current;
-
-  if (inputElement) {
-    inputElement.addEventListener('input', () => {
-      const value = inputElement.value;
-      const dots = value.replace(/[0-9]/g, '.');
-      inputElement.value = dots;
-    });
-  }
-};
-
-
-
-
 const enableCardNumberInput = (ref: React.RefObject<HTMLImageElement | HTMLSpanElement>) => {
   const editButton = ref.current;
 
@@ -171,7 +160,15 @@ const focusOnInput = (ref: React.RefObject<HTMLImageElement>,input: React.RefObj
   }
 };
 
-
+const alertPassword = () => {
+  let paymentButton = paymentButtonRef.current;
+  let passwordValue = passwordNumberRef.current?.value
+  if (paymentButton) {
+    paymentButton.addEventListener('click', () => {
+     alert(passwordValue)
+    });
+  }
+};
 
 
 
@@ -188,7 +185,7 @@ useEffect(()=>{
 
   setPasswordNumberInputToOnlyAcceptNumbers(passwordNumberRef)
 
-  hideNumbersAndDisplayDot(passwordNumberRef)
+
 
   enableCardNumberInput(editIcon)
   enableCardNumberInput(editText)
@@ -197,6 +194,8 @@ useEffect(()=>{
 
   focusOnInput(cvvMenu,cvvNumberRef)
   focusOnInput(passwordMenu,passwordNumberRef)
+
+  alertPassword()
 })
 
 
@@ -207,7 +206,7 @@ useEffect(()=>{
 <div className="content bg-backgroundColor h-[40vw] w-[75%]  flex justify-between items-center ">
 
 <div className="section1  w-[65%] h-full flex flex-col justify-between">
-<div className='headSection w-full h-[10%]  flex justify-between items-center'>  <div className="logoDiv flex items-center"><img src={aceCoinLogo} alt="" className='w-[11vw] object-contain  aspect-[4/3] '  /></div>   <div className="numberDiv text-[1.2vw] text-backgroundColor flex items-center"><div className="leftNumbers flex"><span className='grid mr-[0.2vw] place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>0</span><span className='grid place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>1</span></div><span className='text-navyBlue ml-[0.3vw] mr-[0.3vw] '>:</span><div className="rightNumbers flex"><span className='grid mr-[0.2vw] place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>1</span><span className='grid place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>9</span></div></div>  </div>
+<div className='headSection w-full h-[10%]  flex justify-between items-center'>  <div className="logoDiv flex items-center"><img src={aceCoinLogo} alt="" className='w-[11vw] object-contain  aspect-[4/3] '  /></div>   <div className="numberDiv text-[1.2vw] text-backgroundColor flex items-center"><div className="leftNumbers flex"><span className='grid mr-[0.2vw] place-items-center h-[2.5vw] w-[1.9vw] rounded-[0.3vw] bg-navyBlue'>0</span><span className='grid place-items-center h-[2.5vw] w-[1.9vw] rounded-[0.3vw] bg-navyBlue'>1</span></div><span className='text-navyBlue ml-[0.3vw] mr-[0.3vw] '>:</span><div className="rightNumbers flex"><span className='grid mr-[0.2vw] place-items-center h-[2.5vw] w-[1.9vw] rounded-[0.3vw] bg-navyBlue'>1</span><span className='grid place-items-center h-[2.5vw] w-[1.9vw] rounded-[0.3vw] bg-navyBlue'>9</span></div></div>  </div>
 <div className='cardNumberSection w-full h-[20%]  flex flex-col justify-between '>
 <div className="cardNumberSection-1 w-full h-[47%] flex  justify-between items-center"><div className="cardNumberTextDiv h-full flex flex-col justify-between"><div className="heading text-navyBlue text-[1.2vw] font-semibold">Card Number</div><div className="enterCardNumber text-lightestBlue text-[1vw]">Enter the 16-digit card number on the card</div></div> <div className="editButtonDiv flex "><span className='mr-[0.6vw]'><img ref={editIcon} src={Pencil} alt="" className='cursor-pointer w-[2vw] object-contain  aspect-[4/3]'/></span><span ref={editText} className=' cursor-pointer text-customBlue text-[1.2vw] '>Edit</span></div></div>
 
@@ -232,17 +231,17 @@ useEffect(()=>{
 
 <div className='passwordSection h-[10%] w-full flex justify-between items-center'>
 <div className="passwordHeadingDiv  h-full w-[40%] flex flex-col justify-between"> <div className="passwordHeading  text-navyBlue text-[1.2vw] font-semibold">Password</div> <div className="passwordWriteUp  text-lightestBlue text-[1vw]">Enter your Dynamic password</div> </div>
-<div className="passwordBox  w-[50%] h-full rounded-[0.6vw] border border-ash pr-[1.7vw]  flex justify-end "> <div className="passwordNumberInputDiv w-[95%] flex justify-between items-center"> <input type="password"   name="" id=""  ref={passwordNumberRef} value={passwordValue} placeholder='**********' className='input  text-navyBlue text-[1.2vw] w-[9vw] border-none outline-none -webkit-appearance-none m-0 flex items-center'/> <img ref={passwordMenu} src={menuGrid} alt="" className='cursor-pointer w-[3vw] object-contain  aspect-[4/3]'/> </div> </div>
+<div className="passwordBox  w-[50%] h-full rounded-[0.6vw] border border-ash pr-[1.7vw]  flex justify-end "> <div className="passwordNumberInputDiv w-[95%] flex justify-between items-center"> <input type="password"   name="" id=""  ref={passwordNumberRef}  placeholder='**********' className='input  text-navyBlue text-[1.2vw] w-[9vw] border-none outline-none -webkit-appearance-none m-0 flex items-center'/> <img ref={passwordMenu} src={menuGrid} alt="" className='cursor-pointer w-[3vw] object-contain  aspect-[4/3]'/> </div> </div>
 
 </div>
 
-<div className='paymentButton transition-all ease-in duration-[0.5s]  w-full h-[10%] bg-customBlue rounded-[0.6vw] grid place-items-center text-[1.2vw] text-backgroundColor   hover:bg-navyBlue font-semibold cursor-pointer'>Pay Now</div>
+<button  ref={paymentButtonRef} className='paymentButtonRef transition-all ease-in duration-[0.5s]  w-full h-[10%] bg-customBlue rounded-[0.6vw] grid place-items-center text-[1.2vw] text-backgroundColor   hover:bg-navyBlue font-semibold cursor-pointer'>Pay Now</button>
 
 
 </div>
 
 <div className="section2  w-[30%] h-full flex flex-col justify-between items-center">
-<div className="topLayer rounded-[0.6vw] h-[6%] w-[20%] bg-customBlue">
+<div className="topLayer rounded-[0.2vw] h-[6%] w-[20%] bg-customBlue">
 
 </div>
 
@@ -252,13 +251,13 @@ useEffect(()=>{
 
 <div  className="cardSection bg-cover bg-center h-[61%] w-[67%] bg-white bg-opacity-80 rounded-[0.6vw]-lg flex flex-col justify-between items-center  backdrop-blur-lg absolute top-[-18%]">
  <div className="backgroundDiv relative w-[87%] h-full overflow-hidden flex flex-col justify-between items-center"><img src={radalBG} alt=""  className='max-w-[200%] mt-[25%] absolute '/>
- <div className="chipAndWifiDiv h-[22%] w-full flex justify-between items-end"> <div className="chip">chip</div> <div className="wifi">wifi</div> </div>
+ <div className="chipAndWifiDiv  h-[22%] w-full flex justify-between items-center mt-[2vw]"> <div className="chip"><img src={chip} alt="" className='w-[4vw] object-contain  aspect-[4/3]'/></div> <div className="wifi"><img src={wifi} alt="" className='w-[2.5vw] object-contain  aspect-[4/3]'/></div> </div>
 
 <div className="cardDetailsDiv flex flex-col justify-between h-[40%] w-full">
 
 <div className='cardNameAndNumberSection flex flex-col justify-between h-[45%] w-full'>
-  <div className='nameDiv'>john snow</div>
-<div className='cardNumberDiv'>****2490</div>
+  <div className='nameDiv text-navyBlue text-[1.2vw] '>Jonathan Michael</div>
+<div className='cardNumberDiv text-navyBlue text-[1.3vw] font-semibold flex items-center h-[50%]'><span className='mr-[0.4vw] text-[2vw]'>.</span><span className='mr-[0.4vw]  text-[2vw]'>.</span><span className='mr-[0.4vw]  text-[2vw]'>.</span><span className='mr-[1.2vw]  text-[2vw]'>.</span>2490</div>
 </div>
 
 <div className="expiryDateAndLogoSection flex justify-between h-[33%]">
