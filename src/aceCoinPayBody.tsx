@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { AceStyle } from './aceCoinPayBody.styled';
 import radalBG from './assets/radal-stroke.png'
 import aceCoinLogo from './assets/acecoinlogo.png'
 import Pencil from './assets/pencil.png'
@@ -8,20 +9,113 @@ import Tick from './assets/tick.png'
 
 
 export default function AceCoinPay() {
+
+
+const aceRef = useRef<HTMLDivElement>(null)
+const cardNumberRef1 = useRef<HTMLInputElement>(null)
+const cardNumberRef2 = useRef<HTMLInputElement>(null)
+const cardNumberRef3 = useRef<HTMLInputElement>(null)
+const cardNumberRef4 = useRef<HTMLInputElement>(null)
+const editIcon = useRef<HTMLImageElement>(null)
+const editText = useRef<HTMLSpanElement>(null)
+const check = useRef<HTMLImageElement>(null)
+
+
+
+function setCardNumberInputToOnlyAcceptNumber(ref: React.RefObject<HTMLInputElement>) {
+  const inputElement = ref.current;
+
+  if (inputElement) {
+    inputElement.addEventListener('keydown', (event) => {
+      if (
+        !(
+          event.key === 'Backspace' ||
+          event.key === 'Delete' ||
+          event.key === 'ArrowLeft' ||
+          event.key === 'ArrowRight' ||
+          event.key === 'Tab' ||
+          (event.key >= '0' && event.key <= '9')
+        )
+      ) {
+        event.preventDefault();
+      }
+    });
+
+    inputElement.style.setProperty('appearance', 'textfield');
+
+    inputElement.addEventListener('input', () => {
+      const value = inputElement.value;
+      if (value.length > 4) {
+        inputElement.value = value.slice(0, 4);
+      }
+    });
+  }
+}
+
+
+const enableCardNumberInput = (ref: React.RefObject<HTMLImageElement | HTMLSpanElement>) => {
+  const editButton = ref.current;
+
+  if (editButton) {
+    editButton.addEventListener('click', () => {
+      cardNumberRef4.current?.removeAttribute('disabled');
+      cardNumberRef3.current?.removeAttribute('disabled');
+      cardNumberRef2.current?.removeAttribute('disabled');
+      cardNumberRef1.current?.removeAttribute('disabled');
+      cardNumberRef1.current?.focus();
+    });
+  }
+};
+
+
+const disableCardNumberInputWhenClickedOnCheck = () => {
+  const checkButton = check.current;
+
+  if (checkButton) {
+    checkButton.addEventListener('click', () => {
+      cardNumberRef4.current?.setAttribute('disabled', 'disabled');
+      cardNumberRef3.current?.setAttribute('disabled', 'disabled');
+      cardNumberRef2.current?.setAttribute('disabled', 'disabled');
+      cardNumberRef1.current?.setAttribute('disabled', 'disabled');
+    });
+  }
+};
+
+
+
+
+
+
+
+useEffect(()=>{
+
+  setCardNumberInputToOnlyAcceptNumber(cardNumberRef1)
+  setCardNumberInputToOnlyAcceptNumber(cardNumberRef2)
+  setCardNumberInputToOnlyAcceptNumber(cardNumberRef3)
+  setCardNumberInputToOnlyAcceptNumber(cardNumberRef4)
+
+
+  enableCardNumberInput(editIcon)
+  enableCardNumberInput(editText)
+
+  disableCardNumberInputWhenClickedOnCheck()
+})
+
+
   return (
-    <>
-    <div className='body h-screen w-screen grid place-items-center'>
+    <AceStyle>
+    <div ref={aceRef} className='body h-screen w-screen grid place-items-center'>
 
 <div className="content bg-backgroundColor h-[40vw] w-[75%]  flex justify-between items-center ">
 
 <div className="section1  w-[65%] h-full flex flex-col justify-between">
 <div className='headSection w-full h-[10%]  flex justify-between items-center'>  <div className="logoDiv flex items-center"><img src={aceCoinLogo} alt="" className='w-[11vw] object-contain  aspect-[4/3] '  /></div>   <div className="numberDiv text-[1.2vw] text-backgroundColor flex items-center"><div className="leftNumbers flex"><span className='grid mr-[0.2vw] place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>0</span><span className='grid place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>1</span></div><span className='text-navyBlue ml-[0.3vw] mr-[0.3vw] '>:</span><div className="rightNumbers flex"><span className='grid mr-[0.2vw] place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>1</span><span className='grid place-items-center h-[2.5vw] w-[1.9vw] rounded bg-navyBlue'>9</span></div></div>  </div>
 <div className='cardNumberSection w-full h-[20%]  flex flex-col justify-between '>
-<div className="cardNumberSection-1 w-full h-[47%] flex  justify-between items-center"><div className="cardNumberTextDiv h-full flex flex-col justify-between"><div className="heading text-navyBlue text-[1.2vw] font-semibold">Card Number</div><div className="enterCardNumber text-lightestBlue text-[1vw]">Enter the 16-digit card number on the card</div></div> <div className="editButtonDiv flex "><span className='mr-[0.6vw]'><img src={Pencil} alt="" className='w-[2vw] object-contain  aspect-[4/3]'/></span><span className='text-customBlue '>Edit</span></div></div>
+<div className="cardNumberSection-1 w-full h-[47%] flex  justify-between items-center"><div className="cardNumberTextDiv h-full flex flex-col justify-between"><div className="heading text-navyBlue text-[1.2vw] font-semibold">Card Number</div><div className="enterCardNumber text-lightestBlue text-[1vw]">Enter the 16-digit card number on the card</div></div> <div className="editButtonDiv flex "><span className='mr-[0.6vw]'><img ref={editIcon} src={Pencil} alt="" className='cursor-pointer w-[2vw] object-contain  aspect-[4/3]'/></span><span ref={editText} className=' cursor-pointer text-customBlue text-[1.2vw] '>Edit</span></div></div>
 
 <div className="cardNumberSection-2 w-full h-[70%] flex items-end"><div className="cardNumberContainer bg-backgroundColor w-full h-[80%] border border-ash rounded flex justify-center">
   
- <div className="content w-[95%] h-full flex justify-between items-center"> <div className="masterCardIconAndLogoDiv w-[60%] flex"><img src={masterCardIcon} alt="" className='w-[2vw] object-contain  aspect-[4/3] mr-[1.8vw]' />  <div className="numbers text-cardNumberColor w-[80%] flex justify-between"><span>2412</span><span className='text-navyBlue' >-</span><span>7512</span><span className='text-navyBlue' >-</span><span>3412</span><span className='text-navyBlue' >-</span><span>3456</span></div>  </div>  <div className="tick"><img src={Tick} alt="" className='w-[2vw] object-contain  aspect-[4/3]' /></div>  </div> 
+ <div className="content w-[95%] h-full flex justify-between items-center"> <div className="masterCardIconAndLogoDiv w-[60%] flex"><img src={masterCardIcon} alt="" className='w-[2vw] object-contain  aspect-[4/3] mr-[1.8vw]' />  <div className="numbers text-[1.2vw] text-cardNumberColor w-[80%] flex justify-between"><input type="number"  disabled={true} name="" id=""  ref={cardNumberRef1} placeholder='2412' className='input focus:text-navyBlue w-[3vw] border-none outline-none -webkit-appearance-none m-0'/><span className='text-navyBlue' >-</span><input type="number" disabled={true} name="" id=""  ref={cardNumberRef2} placeholder='7512' className='input focus:text-navyBlue   w-[3vw] border-none outline-none -webkit-appearance-none m-0'/><span className='text-navyBlue' >-</span><input type="number" disabled={true} name="" id=""  ref={cardNumberRef3} placeholder='3412' className='input focus:text-navyBlue  w-[3vw] border-none outline-none -webkit-appearance-none m-0'/><span className='text-navyBlue' >-</span><input type="number" disabled={true} name="" id=""  ref={cardNumberRef4} placeholder='3456' className='input focus:text-navyBlue  w-[3vw] border-none outline-none -webkit-appearance-none m-0'/></div>  </div>  <div className="tick"><img src={Tick}  ref={check} alt="" className='cursor-pointer w-[2vw] object-contain  aspect-[4/3]' /></div>  </div> 
   
   </div></div>
 </div>
@@ -112,6 +206,6 @@ export default function AceCoinPay() {
 
     </div>
     
-    </>
+    </AceStyle>
   );
 }
