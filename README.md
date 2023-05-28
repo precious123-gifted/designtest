@@ -1,46 +1,111 @@
-# Getting Started with Create React App
+## AceCoinPay Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The `AceCoinPay` component is a payment form that allows users to enter card details for making a payment. It includes input fields for card number, CVV number, expiry date, and password. The component also provides functionality for validating and manipulating the input fields.
 
-## Available Scripts
+### Dependencies
 
-In the project directory, you can run:
+The component requires the following dependencies:
+- `React` library
 
-### `npm start`
+### Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To use the `AceCoinPay` component, import it from the appropriate file and include it in your React application:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```jsx
+import AceCoinPay from './AceCoinPay';
 
-### `npm test`
+function App() {
+  return (
+    <div>
+      <AceCoinPay />
+    </div>
+  );
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Component Structure
 
-### `npm run build`
+The `AceCoinPay` component is structured as follows:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```jsx
+function AceCoinPay() {
+  // Refs for DOM elements
+  const aceRef = useRef<HTMLDivElement>(null);
+  const cardNumberRef1 = useRef<HTMLInputElement>(null);
+  const cardNumberRef2 = useRef<HTMLInputElement>(null);
+  const cardNumberRef3 = useRef<HTMLInputElement>(null);
+  // ...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  // Function to set card number input to only accept numbers
+  function setCardNumberInputToOnlyAcceptNumber(ref: React.RefObject<HTMLInputElement>) {
+    // ...
+  }
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  // Function to set card expiry number input to only accept two numbers
+  function setCardExpiryNumberInputToOnlyAcceptTwoNumbers(ref: React.RefObject<HTMLInputElement>) {
+    // ...
+  }
 
-### `npm run eject`
+  // Function to set password number input to only accept numbers
+  function setPasswordNumberInputToOnlyAcceptNumbers(ref: React.RefObject<HTMLInputElement>) {
+    // ...
+  }
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  // Function to enable card number input
+  const enableCardNumberInput = (ref: React.RefObject<HTMLImageElement | HTMLSpanElement>) => {
+    // ...
+  };
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  // Function to disable card number input when clicked on check button
+  const disableCardNumberInputWhenClickedOnCheck = () => {
+    // ...
+  };
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  // Function to focus on input field
+  const focusOnInput = (ref: React.RefObject<HTMLImageElement>, input: React.RefObject<HTMLInputElement>) => {
+    // ...
+  };
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  // Function to display a password alert message
+  const alertPassword = () => {
+    // ...
+  };
 
-## Learn More
+  // Function to display div elements when the page loads
+  const displayDivWhenPageLoads = (div: React.RefObject<HTMLDivElement | HTMLButtonElement>, seconds: number, timeout: number) => {
+    // ...
+  };
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  // Function to render animation styles
+  let renderAnimationStyles = useEffect(() => {
+    // ...
+  });
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  // Function for input functionalities
+  let inputFunctionalities = useEffect(() => {
+    // ...
+  });
+
+  return (
+    <AceStyle>
+      <div ref={aceRef} className='body h-screen  portrait:h-[370vw]  w-screen grid place-items-center'>
+        {/* Component content */}
+      </div>
+    </AceStyle>
+  );
+}
+```
+
+### Functions
+
+#### `setCardNumberInputToOnlyAcceptNumber(ref: React.RefObject<HTMLInputElement>)`
+
+This function sets the card number input field to only accept numbers. It adds event listeners to the input field for keydown and input events, restricting the input to numbers only and limiting the length to 4 digits.
+
+#### `setCardExpiryNumberInputToOnlyAcceptTwoNumbers(ref: React.RefObject<HTMLInputElement>)`
+
+This function sets the card expiry number input field to only accept two numbers. It adds event listeners to the input field for keydown and input events, restricting the input to numbers only and limiting the length to 2 digits.
+
+#### `setPasswordNumberInputToOnlyAccept
+
+.
