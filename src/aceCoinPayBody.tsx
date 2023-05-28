@@ -294,7 +294,7 @@ useEffect(()=>{
 
 </div>
 
-<div className="dottedSection absolute top-[77%] portrait:top-[80%] w-full  flex justify-between items-center "><div className="circle rounded-full bg-backgroundColor w-[2vw] h-[2vw] ml-[-5%]"></div><div className="dash w-full  h-[0.2vw] border-navyBlue "></div><div className="circle mr-[-5%] rounded-full bg-backgroundColor w-[2vw] h-[2vw]"></div></div>
+<div className="dottedSection absolute top-[77%] portrait:top-[80%] w-full  flex justify-between items-center "><div className="circle rounded-full bg-backgroundColor w-[2vw]  portrait:w-[8vw] h-[2vw] portrait:h-[8vw]  ml-[-5%]"></div><div className="dash w-full  h-[0.2vw] portrait:h-[0.6vw]  border-navyBlue "></div><div className="circle mr-[-5%] rounded-full bg-backgroundColor w-[2vw] portrait:w-[8vw] h-[2vw] portrait:h-[8vw] "></div></div>
 
 <div className="extraPaymentDiv absolute flex justify-between items-center h-[12%] w-[70%] top-[85%]">   
 <div className="writeUpAndNumberSection flex flex-col justify-between">   
