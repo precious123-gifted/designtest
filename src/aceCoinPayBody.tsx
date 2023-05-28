@@ -208,12 +208,12 @@ useEffect(()=>{
     <AceStyle>
     <div ref={aceRef} className='body h-screen w-screen grid place-items-center'>
 
-<div className="content bg-backgroundColor h-[40vw] portrait:h-[90%] w-[75%]  portrait:w-[90vw]  portrait:flex-col flex justify-between items-center ">
+<div className="content bg-backgroundColor h-[40vw] portrait:h-[97%] w-[75%]  portrait:w-[90vw]  portrait:flex-col flex justify-between items-center ">
 
 <div className="section1  w-[65%] portrait:w-[100%] portrait:mb-[50vw] h-full flex flex-col justify-between">
 <div className='headSection w-full h-[10%]  portrait:mb-[10vw]  portrait:sm:mb-[12vw] flex justify-between items-center'>  <div className="logoDiv flex items-center"><img src={aceCoinLogo} alt="" className='w-[11vw] portrait:w-[40vw] object-contain  aspect-[4/3] '  /></div>   <div className="numberDiv text-[1.2vw] portrait:text-[5vw] text-backgroundColor flex items-center"><div className="leftNumbers flex"><span className='grid mr-[0.2vw]  portrait:mr-[1vw]  place-items-center h-[2.5vw] portrait:h-[8vw] w-[1.9vw] portrait:w-[5vw] rounded-[0.3vw] portrait:rounded-[0.5vw]  bg-navyBlue'>0</span><span className='grid    place-items-center h-[2.5vw] portrait:h-[8vw] w-[1.9vw] portrait:w-[5vw] rounded-[0.3vw] portrait:rounded-[0.5vw]  bg-navyBlue'>1</span></div><span className='text-navyBlue   ml-[1vw] mr-[1vw] '>:</span><div className="rightNumbers flex"><span className='grid  mr-[0.2vw] portrait:mr-[1vw]  place-items-center h-[2.5vw] portrait:h-[8vw] w-[1.9vw] portrait:w-[5vw] rounded-[0.3vw] portrait:rounded-[0.5vw]  bg-navyBlue'>1</span><span className='grid  place-items-center h-[2.5vw] portrait:h-[8vw] w-[1.9vw] portrait:w-[5vw] rounded-[0.3vw] portrait:rounded-[0.5vw]  bg-navyBlue'>9</span></div></div>  </div>
-<div className='cardNumberSection w-full h-[20%]  portrait:h-[30%]   portrait:mb-[8vw] flex flex-col justify-between '>
-<div className="cardNumberSection-1 w-full h-[68%] portrait:h-[60%] flex  justify-between items-center"><div className="cardNumberTextDiv h-full flex flex-col justify-between"><div className="heading text-navyBlue text-[1.2vw] portrait:text-[4vw] font-semibold">Card Number</div><div className="enterCardNumber text-lightestBlue text-[1vw]  portrait:text-[3.2vw]">Enter the 16-digit card number on the card</div></div> <div className="editButtonDiv flex "><span className='mr-[0.6vw]'><img ref={editIcon} src={Pencil} alt="" className='cursor-pointer w-[2vw]  portrait:w-[6vw] object-contain  aspect-[4/3]'/></span><span ref={editText} className=' cursor-pointer text-customBlue text-[1.2vw]  portrait:text-[3.8vw]'>Edit</span></div></div>
+<div className='cardNumberSection w-full h-[20%]  portrait:h-[13%]   portrait:mb-[6vw] flex flex-col justify-between '>
+<div className="cardNumberSection-1 w-full h-[68%] portrait:h-[40%] flex  justify-between items-center"><div className="cardNumberTextDiv h-full flex flex-col justify-between"><div className="heading text-navyBlue text-[1.2vw] portrait:text-[4vw] font-semibold">Card Number</div><div className="enterCardNumber text-lightestBlue text-[1vw]  portrait:text-[3.2vw]">Enter the 16-digit card number on the card</div></div> <div className="editButtonDiv flex "><span className='mr-[0.6vw]'><img ref={editIcon} src={Pencil} alt="" className='cursor-pointer w-[2vw]  portrait:w-[6vw] object-contain  aspect-[4/3]'/></span><span ref={editText} className=' cursor-pointer text-customBlue text-[1.2vw]  portrait:text-[3.8vw]'>Edit</span></div></div>
 
 <div className="cardNumberSection-2 w-full h-[70%]   flex items-end"><div className="cardNumberContainer bg-backgroundColor w-full h-[100%] portrait:h-[12vw]  border border-ash bg-blueAsh rounded-[0.6vw] flex justify-center">
 
@@ -222,25 +222,25 @@ useEffect(()=>{
   </div></div>
 </div>
 
-<div className='cvvNumberSection h-[10%] portrait:h-[30%] portrait:mb-[8vw] w-full  flex portrait:flex-col justify-between items-center'>
-<div className="cvvHeadingDiv  h-full w-[40%]  portrait:h-[47%] portrait:w-full flex flex-col justify-between "> <div className="cvvHeading heading text-navyBlue text-[1.2vw] portrait:text-[4vw] font-semibold ">CVV Number</div> <div className="3To4DigitNumber  text-lightestBlue text-[1vw] portrait:text-[3.2vw]">Enter the 3 or 4 digit number on the card</div> </div>
+<div className='cvvNumberSection h-[10%] portrait:h-[13%] portrait:mb-[6vw] w-full  flex portrait:flex-col justify-between items-center'>
+<div className="cvvHeadingDiv  h-full w-[40%]  portrait:h-[40%] portrait:w-full flex flex-col justify-between "> <div className="cvvHeading heading text-navyBlue text-[1.2vw] portrait:text-[4vw] font-semibold ">CVV Number</div> <div className="3To4DigitNumber  text-lightestBlue text-[1vw] portrait:text-[3.2vw]">Enter the 3 or 4 digit number on the card</div> </div>
 <div className="cvvNumberBox  w-[50%]  portrait:w-full h-full  portrait:h-[12vw] rounded-[0.6vw] border border-ash pr-[1.7vw]  flex justify-end "> <div className="cvvNumberInputDiv w-[50%]     portrait:w-[80%] flex justify-between items-center"> <input type=""   name="" id=""  ref={cvvNumberRef} placeholder='2412' className='input text-navyBlue text-[1.2vw] portrait:text-[4vw]  w-[3vw] portrait:w-[10vw] border-none outline-none '/> <img ref={cvvMenu} src={menuGrid} alt="" className='cursor-pointer w-[3vw] portrait:w-[8vw] object-contain  aspect-[4/3]'/> </div> </div>
 </div>
 
-<div className='expiryDateSection   h-[10%]  portrait:h-[30%] portrait:mb-[8vw] w-ful flex  portrait:flex-col justify-between items-center portrait:items-start'>
-<div className="expiryDateHeadingDiv  h-full w-[40%]  portrait:h-[47%] portrait:w-full flex flex-col justify-between">  <div className="expiryDateHeading text-navyBlue text-[1.2vw] portrait:text-[4vw]  font-semibold ">Expiry Date</div> <div className="expiryDateWriteUp  text-lightestBlue text-[1vw]  portrait:text-[3.2vw] ">Enter the expiration date of the card</div> </div>
+<div className='expiryDateSection   h-[10%]  portrait:h-[13%] portrait:mb-[6vw] w-ful flex  portrait:flex-col justify-between items-center portrait:items-start'>
+<div className="expiryDateHeadingDiv  h-full w-[40%]  portrait:h-[40%] portrait:w-full flex flex-col justify-between">  <div className="expiryDateHeading text-navyBlue text-[1.2vw] portrait:text-[4vw]  font-semibold ">Expiry Date</div> <div className="expiryDateWriteUp  text-lightestBlue text-[1vw]  portrait:text-[3.2vw] ">Enter the expiration date of the card</div> </div>
 <div className="expiryDateDivs flex justify-between items-center   w-[50%] h-full  portrait:h-[12vw] text-navyBlue"> <div className="leftDateBox rounded-[0.6vw] border border-ash w-[40%] h-full grid place-items-center portrait:text-[4vw]"><input type=""   name="" id=""  ref={expiryNumberRef1} placeholder='09' className='input text-navyBlue text-[1.2vw]  portrait:text-[4vw] w-[1.5vw]  portrait:w-[5vw] border-none outline-none '/></div> / <div className="rightDateBox rounded-[0.6vw] bg-lightBlue border-2 border-customBlue w-[40%] h-full grid place-items-center"><input type=""   name="" id=""  ref={expiryNumberRef2} placeholder='23' className='input bg-lightBlue text-navyBlue text-[1.2vw] portrait:text-[4vw] w-[1.5vw] portrait:w-[5vw] border-none outline-none '/></div> </div>
 
 
 </div>
 
-<div className='passwordSection h-[10%]  portrait:h-[30%] portrait:mb-[8vw] w-full flex   portrait:flex-col justify-between items-center  portrait:items-start'>
-<div className="passwordHeadingDiv  h-full w-[40%]  portrait:h-[47%] portrait:w-full flex flex-col justify-between"> <div className="passwordHeading  text-navyBlue text-[1.2vw]  portrait:text-[4vw] font-semibold">Password</div> <div className="passwordWriteUp  text-lightestBlue text-[1vw] portrait:text-[3.2vw]  ">Enter your Dynamic password</div> </div>
+<div className='passwordSection h-[10%]  portrait:h-[13%] portrait:mb-[13vw] w-full flex   portrait:flex-col justify-between items-center  portrait:items-start'>
+<div className="passwordHeadingDiv  h-full w-[40%]  portrait:h-[40%] portrait:w-full flex flex-col justify-between"> <div className="passwordHeading  text-navyBlue text-[1.2vw]  portrait:text-[4vw] font-semibold">Password</div> <div className="passwordWriteUp  text-lightestBlue text-[1vw] portrait:text-[3.2vw]  ">Enter your Dynamic password</div> </div>
 <div className="passwordBox  w-[50%] portrait:w-full h-full  portrait:h-[12vw]  rounded-[0.6vw] border border-ash pr-[1.7vw]  flex justify-end "> <div className="passwordNumberInputDiv w-[95%] flex justify-between items-center"> <input type="password"   name="" id=""  ref={passwordNumberRef}  placeholder='**********' className='input  text-navyBlue text-[1.2vw] portrait:text-[4vw]  w-[9vw]  portrait:w-[30vw] border-none outline-none  flex items-center'/> <img ref={passwordMenu} src={menuGrid} alt="" className='cursor-pointer w-[3vw]  portrait:w-[8vw]   object-contain  aspect-[4/3]'/> </div> </div>
 
 </div>
 
-<button  ref={paymentButtonRef} className='paymentButtonRef transition-all ease-in duration-[0.5s]  w-full h-[10%]  portrait:h-[25vw] bg-customBlue rounded-[0.6vw] grid place-items-center text-[1.2vw]  portrait:text-[4vw]  text-backgroundColor   hover:bg-navyBlue font-semibold cursor-pointer'>Pay Now</button>
+<button  ref={paymentButtonRef} className='paymentButtonRef transition-all ease-in duration-[0.5s]  w-full h-[10%]  portrait:h-[15vw] bg-customBlue rounded-[0.6vw] grid place-items-center text-[1.2vw]  portrait:text-[5vw]  text-backgroundColor   hover:bg-navyBlue font-semibold cursor-pointer'>Pay Now</button>
 
 
 </div>
