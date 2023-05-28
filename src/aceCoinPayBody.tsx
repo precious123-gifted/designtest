@@ -184,7 +184,7 @@ const focusOnInput = (ref: React.RefObject<HTMLImageElement>,input: React.RefObj
   }
 };
 
-const alertPassword = () => {
+const sendPromtToUsersAskingHowTheyEnjoyedTheirExperienceUsingAceCoinPayPlatform = () => {
   let paymentButton = paymentButtonRef.current;
   
   if (paymentButton) {
@@ -254,7 +254,7 @@ let inputFunctionalities = useEffect(()=>{
   focusOnInput(cvvMenu,cvvNumberRef)
   focusOnInput(passwordMenu,passwordNumberRef)
 
-  alertPassword()
+  sendPromtToUsersAskingHowTheyEnjoyedTheirExperienceUsingAceCoinPayPlatform()
 })
 
 
