@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/designtest/static/css/main.2dc103aa.css",
-    "main.js": "/designtest/static/js/main.be729cac.js",
+    "main.css": "/designtest/static/css/main.f1329ff9.css",
+    "main.js": "/designtest/static/js/main.bba4ea0e.js",
     "static/js/787.266d2bac.chunk.js": "/designtest/static/js/787.266d2bac.chunk.js",
     "static/media/chip.png": "/designtest/static/media/chip.b3d50c0dc1ddd67a8589.png",
     "static/media/radal-stroke.png": "/designtest/static/media/radal-stroke.0c4a550b5b845c9d93b6.png",
+    "static/media/mastercardlogo.png": "/designtest/static/media/mastercardlogo.b2af0f5ac573a274294c.png",
+    "static/media/acecoinlogo.png": "/designtest/static/media/acecoinlogo.12793e948ff43f2d20cd.png",
+    "static/media/mastercard.png": "/designtest/static/media/mastercard.59f590dbb7e31c8c1e57.png",
     "index.html": "/designtest/index.html",
-    "main.2dc103aa.css.map": "/designtest/static/css/main.2dc103aa.css.map",
-    "main.be729cac.js.map": "/designtest/static/js/main.be729cac.js.map",
+    "main.f1329ff9.css.map": "/designtest/static/css/main.f1329ff9.css.map",
+    "main.bba4ea0e.js.map": "/designtest/static/js/main.bba4ea0e.js.map",
     "787.266d2bac.chunk.js.map": "/designtest/static/js/787.266d2bac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dc103aa.css",
-    "static/js/main.be729cac.js"
+    "static/css/main.f1329ff9.css",
+    "static/js/main.bba4ea0e.js"
   ]
 }
