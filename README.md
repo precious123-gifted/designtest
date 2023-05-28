@@ -66,8 +66,8 @@ function AceCoinPay() {
     // ...
   };
 
-  // Function to display a password alert message
-  const alertPassword = () => {
+  // Function to send a prompt to users asking them if they had a good experience using AceCoinPay platform or not
+  const sendPromtToUsersAskingHowTheyEnjoyedTheirExperienceUsingAceCoinPayPlatform = () => {
     // ...
   };
 
