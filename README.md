@@ -72,7 +72,7 @@ function AceCoinPay() {
   };
 
   // Function to display div elements when the page loads
-  const displayDivWhenPageLoads = (div: React.RefObject<HTMLDivElement | HTMLButtonElement>, seconds: number, timeout: number) => {
+  const displayDivWhenPageLoads = (div: React.RefObject<HTMLDivElement | HTMLButtonElement | HTMLImageElement>, seconds: number, timeout: number) => {
     // ...
   };
 
